@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AI Ventures</title>
+
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">AI Ventures CV Writing</h1>
+
+      <p>AI Ventures cv writer will allow you to generate sentences using gpt3.</p>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="Company" class="form-label">Describe about your company?</label>
+              <input type="text" class="form-control" id="Company" name="Company" placeholder="Enter some keywords to describe your previous company">
+            </div>
+            <input type="hidden" name="form1" value="form1">
+
+            <button type="submit" id="CompanyButton" class="btn btn-primary">Generate description of previous company</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+         {{CompanyDescription|safe}}
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="Skills" class="form-label">Enter the role that you want</label>
+              <input type="text" class="form-control" id="Skills" name="Skills" placeholder="Enter the role that you want">
+            </div>
+            <input type="hidden" name="form2" value="form2">
+
+            <button type="submit" class="btn btn-primary">Generate Recommended skills</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          {{SkillsDescription|safe}}
+        </div>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="SkillsExpander" class="form-label">Enter the skills you want to write in your CV</label>
+              <input type="text" class="form-control" id="SkillsExpander" name="SkillsExpander" placeholder="Enter the key skills">
+            </div>
+            <input type="hidden" name="form3" value="form3">
+
+            <button type="submit" class="btn btn-primary">Generate sentences</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          {{SkillsExpanded|safe}}
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
